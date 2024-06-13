@@ -377,6 +377,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id dex --autostart --environment i3
 
+exec_always --no-startup-id systemctl start bluetooth
 # start welcome app
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
@@ -391,10 +392,10 @@ exec --no-startup-id numlockx on
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-# Repeated to make sure screen isnt black
 exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id ~/.screenlayout/monitor2.sh
 exec --no-startup-id ~/.screenlayout/monitor.sh
+bindsym $mod+m exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
@@ -408,7 +409,7 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
-exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
+exec --no-startup-id xautolock -time 60 -locker "i3lock -i ~/.config/i3/i3-lock-screen.png -p deault | win -t && systemctl suspend"
 
 
 # xscreensaver
@@ -529,7 +530,7 @@ bar {
 
     bindsym button6 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo && notify-send "Audio output - TV" && pkill -RTMIN+1 i3blocks
     bindsym button7 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo && notify-send "Audio output - PC" && pkill -RTMIN+1 i3blocks
-    bindsym button2 exec --no-startup-id pactl set-default-sink bluez_outbut.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
+    bindsym button2 exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
 
 		    colors {
 		    separator          $purple
