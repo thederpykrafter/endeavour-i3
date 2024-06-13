@@ -56,6 +56,7 @@ new_window pixel 1
 # Set inner/outer gaps
 gaps inner 6
 gaps outer 3
+smart_gaps on
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -172,7 +173,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+t exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -182,9 +183,9 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
 # Lock the system
 # lock with a picture:
-#bindsym $mod+l exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
+bindsym $mod+x exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec --no-startup-id ~/.config/i3/scripts/blur-lock
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/scripts/blur-lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -203,10 +204,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+ && notify-s
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%- && notify-send "$(brightnessctl i | grep 'Current')"
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+b focus up
-bindsym $mod+o focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -215,10 +216,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+b move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -227,7 +228,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -247,7 +248,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus parent
 
 # open new empty workspace
 bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace
@@ -284,7 +285,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec --no-startup-id /usr/bin/firefox
+bindsym XF86Tools exec --no-startup-id firefox "music.youtube.com"
+bindsym $mod+b exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
@@ -379,7 +381,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
-#exec --no-startup-id numlockx on
+exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
 #exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
@@ -389,11 +391,14 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
+# Repeated to make sure screen isnt black
+exec --no-startup-id ~/.screenlayout/monitor.sh
+exec --no-startup-id ~/.screenlayout/monitor2.sh
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
+exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/i3-wallpaper.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -403,7 +408,7 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
-#exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
+exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
 
 
 # xscreensaver
@@ -504,20 +509,27 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Noto Sans Regular 10
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position bottom
-#	    	i3bar_command i3bar --transparency
+  font pango: Noto Sans Regular 10
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position bottom
+#    i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    #tray_output primary
-		    tray_padding 0
+#    tray_output primary
+		tray_padding 1px
 
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
 # “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
+##strip_workspace_numbers yes
 ##strip_workspace_name no
+
+    bindsym button4 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+    bindsym button5 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+
+    bindsym button6 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo && notify-send "Audio output - TV" && pkill -RTMIN+1 i3blocks
+    bindsym button7 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo && notify-send "Audio output - PC" && pkill -RTMIN+1 i3blocks
+    bindsym button2 exec --no-startup-id pactl set-default-sink bluez_outbut.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
 
 		    colors {
 		    separator          $purple
@@ -571,16 +583,19 @@ bar {
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-#bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
-
-bindsym $mod+t exec --no-startup-id rofi -show window \
+bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-#bindsym F10 exec --no-startup-id rofi -show window \
+## rofi bindings for window menu ($mod+t /$mod+w / F10 optional disabled)
+
+#bindsym $mod+t exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym F10 exec --no-startup-id rofi -show window \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+w exec --no-startup-id rofi -show window \
+		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
 
