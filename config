@@ -391,9 +391,7 @@ exec --no-startup-id numlockx on
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/monitor.sh
-exec --no-startup-id ~/.screenlayout/monitor2.sh
-exec --no-startup-id ~/.screenlayout/monitor.sh
+exec_always --no-startup-id ~/.screenlayout/monitor.sh
 bindsym $mod+m exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
@@ -401,14 +399,15 @@ bindsym $mod+m exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/i3-wallpaper.png
 
 # set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id xset s 480 dpms 1400 1600 1800
 
 # disable power saving (for example if using xscreensaver)
 #exec --no-startup-id xset -dpms
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
-exec --no-startup-id xautolock -time 60 -locker "i3lock -i ~/.config/i3/i3-lock-screen.png -p deault | win -t && systemctl suspend"
+#exec --no-startup-id xautolock -time 60 -locker "i3lock -i ~/.config/i3/i3-lock-screen.png -p deault | win -t && systemctl suspend"
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/.config/i3/i3-lock-screen.png
 
 
 # xscreensaver
