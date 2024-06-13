@@ -48,7 +48,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 3
 
 # thin borders
 # hide_edge_borders both
@@ -357,10 +357,10 @@ for_window [class=TelegramDesktop] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-exec_always --no-startup-id picom -b -f
+#exec_always --no-startup-id picom -b -f
 #
 # for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
