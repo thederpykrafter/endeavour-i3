@@ -302,8 +302,8 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
+set $ws4 "4:"
+set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -313,25 +313,25 @@ set $ws10 "10"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-#workspace $ws1 output VGA-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output HDMI-0
-#workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+workspace $ws1 output HDMI-1-0
+workspace $ws2 output eDP-1
+workspace $ws3 output HDMI-1-0
+workspace $ws4 output eDP-1
+workspace $ws5 output HDMI-1-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
-assign [class="(?i)firefox"] $ws2
+assign [class="Alacritty"] $ws1
+assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
-assign [class="thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
+assign [class="obsidian"] $ws4
+assign [class="(?i)obs"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
+for_window [class=Alacritty] focus
+for_window [class=firefox] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=obsidian] focus
+for_window [class=(?i)obs] focus
 
 ##############
 # compositor #
@@ -514,7 +514,7 @@ bar {
 #    i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
-#    tray_output primary
+    tray_output primary
 		tray_padding 1px
 
 # When strip_workspace_numbers is set to yes,
