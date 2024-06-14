@@ -280,12 +280,14 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 # Above line will also work for pausing
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86Tools exec --no-startup-id /usr/bin/firefox "music.youtube.com"
 
 # Redirect sound to headphones
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym XF86Tools exec --no-startup-id firefox "music.youtube.com"
+bindsym $mod+o exec --no-startup-id obsidian
+bindsym $mod+Shift+o exec --no-startup-id obs
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
@@ -299,11 +301,11 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -315,9 +317,9 @@ set $ws10 "10"
 # you can get from xrandr command
 workspace $ws1 output HDMI-1-0
 workspace $ws2 output eDP-1
-workspace $ws3 output HDMI-1-0
-workspace $ws4 output eDP-1
-workspace $ws5 output HDMI-1-0
+workspace $ws3 output eDP-1
+workspace $ws4 output HDMI-1-0
+workspace $ws5 output eDP-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $ws1
