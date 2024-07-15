@@ -1,7 +1,9 @@
 #!/bin/bash
 
+monitor="$(xrandr | grep "HDMI" | tail -n1 | cut -d " " -f1)"
+
 if cat /sys/class/net/enp8s0/operstate | grep "up" &> /dev/null; then
-	xrandr --output HDMI-1-1 --left-of eDP-1 --auto
+	xrandr --output $monitor --left-of eDP-1 --auto
 else
-	xrandr --output HDMI-1-1 --right-of eDP-1 --auto
+	xrandr --output $monitor --right-of eDP-1 --auto
 fi
