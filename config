@@ -282,6 +282,27 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86Tools exec --no-startup-id /usr/bin/firefox "music.youtube.com"
 
+# switch between audio outputs
+set $mode_audio Audio (1) PC, (2) TV, (3) E7
+
+mode "$mode_audio" {
+        # Laptop
+        bindsym 1 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo, mode "default"
+
+        # TV
+        bindsym 2 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo, mode "default"
+
+        # E7
+        bindsym 3 exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+a mode "$mode_audio"
+
+# set TV as default sink on login if connected
+exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1, mode "default"
+
 # Redirect sound to headphones
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
