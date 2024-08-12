@@ -357,7 +357,7 @@ for_window [class=obsidian] focus
 for_window [class=(?i)obs] focus
 
 # disable floating fore love2d
-for_window [class=love] floating disable
+#for_window [class=love] floating disable
 ##############
 # compositor #
 ##############
