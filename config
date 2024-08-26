@@ -194,7 +194,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
+bindsym $mod+F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
@@ -607,15 +607,15 @@ bar {
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+#bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
+#		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /$mod+w / F10 optional disabled)
 
 #bindsym $mod+t exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym F10 exec --no-startup-id rofi -show window \
+bindsym $mod+Shift+d exec --no-startup-id rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+w exec --no-startup-id rofi -show window \
