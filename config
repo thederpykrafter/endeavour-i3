@@ -507,24 +507,24 @@ for_window [class="urxvt"] border pixel 1
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
+set $darkbluetrans              #08052be6
+set $darkblue                   #08052b
+set $lightblue                  #5294e2
+set $urgentred                  #e53935
+set $white                      #ffffff
+set $black                      #000000
+set $purple                     #e345ff
+set $darkgrey                   #383c4a
+set $grey                       #b0b5bd
+set $mediumgrey                 #8b8b8b
+set $yellowbrown                #e1b700
 
 # define colors for windows:
-#class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
-client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
-client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
+#                               border          bground         text            indicator       child_border
+client.focused                  $lightblue      $darkblue       $white          $mediumgrey     $mediumgrey
+client.unfocused                $darkblue       $darkblue       $grey           $darkgrey       $darkgrey
+client.focused_inactive         $darkblue       $darkblue       $grey           $black          $black
+client.urgent                   $urgentred      $urgentred      $white          $yellowbrown    $yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -535,36 +535,36 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 bar {
   font pango: Noto Sans Regular 10
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    position bottom
-#    i3bar_command i3bar --transparency
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-    tray_output primary
-		tray_padding 1px
+  position bottom
+  #    i3bar_command i3bar --transparency
+  # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+  # reference: https://i3wm.org/docs/userguide.html#_tray_output
+  tray_output primary
+  tray_padding 1px
 
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-##strip_workspace_numbers yes
-##strip_workspace_name no
+  # When strip_workspace_numbers is set to yes,
+  # any workspace that has a name of the form
+  # “[n][:][NAME]” will display only the name.
+  ##strip_workspace_numbers yes
+  ##strip_workspace_name no
 
-    bindsym button4 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
-    bindsym button5 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+  bindsym button4 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+  bindsym button5 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
 
-    bindsym button6 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo && notify-send "Audio output - TV" && pkill -RTMIN+1 i3blocks
-    bindsym button7 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo && notify-send "Audio output - PC" && pkill -RTMIN+1 i3blocks
-    bindsym button2 exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
+  bindsym button6 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo && notify-send "Audio output - TV" && pkill -RTMIN+1 i3blocks
+  bindsym button7 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo && notify-send "Audio output - PC" && pkill -RTMIN+1 i3blocks
+  bindsym button2 exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
 
-		    colors {
-		    separator          $purple
-		    background         $darkgrey
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	}
+  colors {
+      separator               $purple
+      background              $darkgrey
+      statusline              $white
+      # border | bg | txt | indicator
+      focused_workspace       $mediumgrey    $grey          $darkgrey      $purple
+      active_workspace        $lightblue     $mediumgrey    $darkgrey      $purple
+      inactive_workspace      $darkgrey      $darkgrey      $grey          $purple
+      urgent_workspace        $urgentred     $urgentred     $white         $purple
+  }
 }
 
 # you can add different bars for multidisplay setups on each display:
