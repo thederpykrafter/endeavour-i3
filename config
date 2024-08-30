@@ -48,14 +48,14 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 3
+new_window pixel 2
 
 # thin borders
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 3
+gaps inner 3
+gaps outer 1
 smart_gaps on
 
 # show window title bars (not officially supported with i3gaps)
@@ -521,9 +521,9 @@ set $yellowbrown                #e1b700
 
 # define colors for windows:
 #                               border          bground         text            indicator       child_border
-client.focused                  $lightblue      $darkblue       $white          $mediumgrey     $mediumgrey
-client.unfocused                $darkblue       $darkblue       $grey           $darkgrey       $darkgrey
-client.focused_inactive         $darkblue       $darkblue       $grey           $black          $black
+client.focused                  $lightblue      $darkblue       $white          $purple     $purple
+client.unfocused                $darkblue       $darkblue       $grey           $darkgrey       $black
+client.focused_inactive         $darkblue       $darkblue       $grey           $black          $darkgrey
 client.urgent                   $urgentred      $urgentred      $white          $yellowbrown    $yellowbrown
 
 ############################################
