@@ -1,4 +1,21 @@
 #/bin/bash
 
 # use nvidia-smi to query gpu temp
-nvidia-smi -q | grep "[0-9] C" | head -n 1 | tr -d ' ' | sed "s/GPUCurrentTemp://" | sed "s/C/°C/"
+# nvidia-smi -q | grep "[0-9] C" | head -n 1 | tr -d ' ' | sed "s/GPUCurrentTemp://" | sed "s/C/°C/"
+
+temperature=`nvidia-smi -q | grep "[0-9] C" | head -n 1 | tr -d " " | sed "s/[^0-9]*//g"`
+
+if (( $temperature < 50 )); then
+  label=''
+elif (( $temperature < 60 )); then
+  label=''
+elif (( $temperature < 70 )); then
+  label=''
+elif (( $temperature < 80 )); then
+  label=''
+else
+  label=''
+fi
+
+
+echo $label $temperature°C
