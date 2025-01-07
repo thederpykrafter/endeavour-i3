@@ -121,7 +121,6 @@ menu=(
   [ Lock Blur]="~/.config/i3/scripts/blur-lock"
   [ Lock Img]="i3lock -i ~/.config/i3/i3-lock-screen.png -p default | win -t"
   [ Logout]="i3-msg exit"
-  [ Cancel]=""
 )
 
 menu_nrows=${#menu[@]}
