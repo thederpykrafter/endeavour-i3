@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+if [ -d /run/media/thederpykrafter/KINGSTON ];
+then
+  if [ -d ~/Dev/sh/universal-setup ];
+  then
+    echo -e "\e[94mBacking up Universal Setup to Kingston Drive\e[m"
+    sudo cp -ru ~/Dev/sh/universal-setup /run/media/thederpykrafter/KINGSTON/
+    echo -e "\e[94mBackup complete!\e[m"
+    fi
+fi
