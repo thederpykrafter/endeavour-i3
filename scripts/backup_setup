@@ -6,7 +6,9 @@ then
   if [ -d ~/Dev/sh/universal-setup ];
   then
     echo -e "\e[94mBacking up Universal Setup to Kingston Drive\e[m"
-    sudo cp -ru ~/Dev/sh/universal-setup /run/media/thederpykrafter/KINGSTON/
+    dunstify -t 10000 -u normal "Backing up Universal Setup to Kingston Drive"
+    sudo cp -ru ~/Dev/sh/universal-setup /run/media/thederpykrafter/KINGSTON/ &
+    dunstify -t 10000 -u normal "Backup Complete"
     echo -e "\e[94mBackup complete!\e[m"
     fi
 fi
