@@ -237,7 +237,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+Shift+s layout stacking
 bindsym $mod+g layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -307,6 +307,7 @@ exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1, mo
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
+bindsym $mod+s exec --no-startup-id steam
 bindsym $mod+o exec --no-startup-id obsidian
 bindsym $mod+Shift+o exec --no-startup-id obs
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
