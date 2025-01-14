@@ -346,6 +346,7 @@ workspace $ws5 output eDP-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="Alacritty"] $ws1
+assign [class="steam"] $ws2
 assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="obsidian"] $ws4
@@ -353,6 +354,7 @@ assign [class="(?i)obs"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=Alacritty] focus
+for_window [class=steam] focus
 for_window [class=firefox] focus
 for_window [class=Thunar] focus
 for_window [class=obsidian] focus
