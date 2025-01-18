@@ -18,4 +18,4 @@ else
 fi
 
 
-echo $label $temperature°C
+echo $label $temperature".0°C"
