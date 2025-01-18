@@ -633,3 +633,4 @@ bindsym $mod+w exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 exec_always --no-startup-id ~/.config/i3/scripts/backup_setup
+exec_always --no-startup-id mpv ~/.config/i3/pop-sound.mp3
