@@ -637,7 +637,8 @@ bindsym $mod+w exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 # rofi-code for code/code-insiders projects
-bindsym $mod+c exec --no-startup-id rofi-code || rofi-code --code code-insiders
+bindsym $mod+c exec --no-startup-id rofi-code || \
+        rofi-code --code code-insiders --dir ~/.config/Code\ -\ Insiders/
 
 exec_always --no-startup-id ~/.config/i3/scripts/backup_setup
 exec_always --no-startup-id mpv ~/.config/i3/load-sound.mp3
