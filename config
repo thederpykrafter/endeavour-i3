@@ -641,4 +641,4 @@ bindsym $mod+c exec --no-startup-id rofi-code || \
         rofi-code --code code-insiders --dir ~/.config/Code\ -\ Insiders/
 
 exec_always --no-startup-id ~/.config/i3/scripts/backup_setup
-exec_always --no-startup-id mpv ~/.config/i3/load-sound.mp3
+exec_always --no-startup-id sleep 1 && mpv ~/.config/i3/load-sound.mp3
