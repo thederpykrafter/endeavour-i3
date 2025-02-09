@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # use nvidia-smi to query gpu usage
-nvidia-smi -q | grep % | head -n 1 | tr -d ' ' | sed "s/Gpu://"
+nvidia-smi -q | grep % | head -n 1 | tr -d ' ' | sed "s/GPU://"
