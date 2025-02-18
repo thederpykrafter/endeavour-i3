@@ -178,6 +178,9 @@ bindsym $mod+t exec --no-startup-id alacritty
 # kill focused window
 bindsym $mod+q kill
 
+# xkill
+bindsym $mod+Escape exec --no-startup-id xkill
+
 # exit-menu
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
