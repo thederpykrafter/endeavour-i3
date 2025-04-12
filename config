@@ -393,10 +393,10 @@ for_window [class=(?i)obs] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-#exec_always --no-startup-id picom -b -f
+exec_always --no-startup-id picom -b -f
 #
 # for custom config:
-exec_always --no-startup-id picom --config  ~/.config/picom.conf
+# exec_always --no-startup-id picom --config  ~/.config/picom.conf -b -f
 
 #############################################
 # autostart applications/services on login: #
@@ -404,6 +404,7 @@ exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #start udiskie
 exec --no-startup-id /usr/bin/udiskie --tray &
+
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
