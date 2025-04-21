@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot -z $PICTURE"
+PICTURE=~/.config/i3/i3-lock-screen.png
 CURSOR="default" # show cursor
-
-BLUR="5x4"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
 
 # -e ignores empty password
 i3lock -i $PICTURE -p $CURSOR -e -n
-rm $PICTURE
 
 # dual monitor fix
 i3-msg reload
