@@ -14,5 +14,5 @@ i3lock -i $PICTURE -p $CURSOR -e -n
 rm $PICTURE
 
 # dual monitor fix
-sleep 1
+sleep 0.1
 i3-msg restart
