@@ -7,4 +7,5 @@ CURSOR="default" # show cursor
 i3lock -i $PICTURE -p $CURSOR -e -n
 
 # dual monitor fix
+sleep 1
 i3-msg reload
