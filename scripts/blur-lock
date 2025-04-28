@@ -2,7 +2,6 @@
 
 PICTURE=/tmp/i3lock.png
 SCREENSHOT="scrot -z $PICTURE"
-CURSOR="default" # show cursor
 
 BLUR="5x4"
 
@@ -10,7 +9,8 @@ $SCREENSHOT
 convert $PICTURE -blur $BLUR $PICTURE
 
 # -e ignores empty password
-i3lock -i $PICTURE -p $CURSOR -e -n
+# -p "default" shows cursor
+i3lock -i $PICTURE -e -n
 rm $PICTURE
 
 # dual monitor fix

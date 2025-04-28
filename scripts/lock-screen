@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 PICTURE=~/.config/i3/i3-lock-screen.png
-CURSOR="default" # show cursor
 
 # -e ignores empty password
-i3lock -i $PICTURE -p $CURSOR -e -n
+# ep "default" shows cursor
+i3lock -i $PICTURE -e -n
 
 # dual monitor fix
 sleep 0.1
