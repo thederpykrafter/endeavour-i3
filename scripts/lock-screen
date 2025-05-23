@@ -3,9 +3,11 @@
 PICTURE=~/.config/i3/i3-lock-screen.png
 
 # -e ignores empty password
-# ep "default" shows cursor
+# -n dont fork process
 i3lock -i $PICTURE -e -n
 
 # dual monitor fix
-sleep 0.1
-i3-msg restart
+sleep 0.1 && i3-msg restart # or restart
+
+# resume workspace
+sleep 0.1 && i3-msg workspace "1: "
