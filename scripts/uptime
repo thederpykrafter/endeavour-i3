@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+awk_time=`uptime -p | awk -F'( |,|:)+' '{print $2,"d",$4,"h",$6,"m"}' | sed 's/ d/d/; s/ h/h/; s/ m/m/'`
+time_up=`uptime | sed 's/.*up \([^,]*\), .*/\1/'`
+
+printf "$awk_time\n"
+printf "$time_up\n"
+
+if echo $awk_time | grep "w" &> /dev/null; then
+  printf "#FF0000\n"
+  exit 33
+elif echo $awk_time | grep "[1-7]d" &> /dev/null; then
+  printf "#FFFC00\n"
+fi
