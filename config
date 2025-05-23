@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+t exec --no-startup-id alacritty
+bindsym $mod+t exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -348,7 +348,7 @@ workspace $ws4 output HDMI-1-0
 workspace $ws5 output eDP-1
 
 # bind program to workspace and focus to them on startup:
-assign [class="Alacritty"] $ws1
+assign [class="kitty"] $ws1
 assign [class="(?i)code - insiders"] $ws1
 assign [class="(?i)code"] $ws1
 assign [class="steam"] $ws2
@@ -358,7 +358,7 @@ assign [class="obsidian"] $ws4
 assign [class="(?i)obs"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Alacritty] focus
+for_window [class=kitty] focus
 for_window [class="(?i)code - insiders"] focus
 for_window [class="(?i)code"] focus
 for_window [class=steam] focus
