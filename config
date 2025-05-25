@@ -525,13 +525,13 @@ set $darkbluetrans              #08052be6
 set $darkblue                   #08052b
 set $lightblue                  #5294e2
 set $urgentred                  #e53935
-set $white                      #ffffff
+set $white                      #a9b1d6
 set $black                      #000000
 set $purple                     #e345ff
-set $darkgrey                   #383c4a
-set $grey                       #b0b5bd
+set $darkgrey                   #11121d
+set $grey                       #4a5057
 set $mediumgrey                 #8b8b8b
-set $yellowbrown                #e1b700
+set $yellowbrown                #d7a65f
 
 # define colors for windows:
 #                               border          bground         text            indicator       child_border
