@@ -179,7 +179,7 @@ bindsym $mod+t exec --no-startup-id kitty
 bindsym $mod+q kill
 
 # xkill
-bindsym $mod+Escape exec --no-startup-id xkill
+bindsym $mod+Shift+q exec --no-startup-id xkill
 
 # exit-menu
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
