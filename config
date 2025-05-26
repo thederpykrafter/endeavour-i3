@@ -315,6 +315,8 @@ bindsym $mod+o exec --no-startup-id obsidian
 bindsym $mod+Shift+o exec --no-startup-id obs
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
+
+# Screenshots
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym Shift+Print exec --no-startup-id scrot -u ~/%Y-%m-%d-%T-screenshot.png && notify-send "Appshot saved to ~/$(date +"%Y-%m-%d-%T")-appshot.png"
 
