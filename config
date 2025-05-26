@@ -405,7 +405,7 @@ exec_always --no-startup-id picom -b -f
 #############################################
 
 #start udiskie
-exec --no-startup-id /usr/bin/udiskie --tray &
+# exec --no-startup-id /usr/bin/udiskie --tray &
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -537,7 +537,7 @@ set $yellowbrown                #d7a65f
 
 # define colors for windows:
 #                               border          bground         text            indicator       child_border
-client.focused                  $lightblue      $darkblue       $white          $purple     $purple
+client.focused                  $lightblue      $darkblue       $white          $purple         $purple
 client.unfocused                $darkblue       $darkblue       $grey           $darkgrey       $black
 client.focused_inactive         $darkblue       $darkblue       $grey           $black          $darkgrey
 client.urgent                   $urgentred      $urgentred      $white          $yellowbrown    $yellowbrown
