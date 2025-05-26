@@ -276,7 +276,7 @@ bindsym $mod+XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Mast
 bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
 
 # mic mute toggle
-bindsym XF86AudioMicMute exec amixer sset Capture toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 
 # audio control
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause 
