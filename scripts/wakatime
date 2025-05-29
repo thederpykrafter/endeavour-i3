@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 waka_command=wakatime || wakatime-cli || echo -e "\e[91mNO WAKATIME CLI FOUND\e[m" && return 1
 
