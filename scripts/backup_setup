@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if [ -d /run/media/thederpykrafter/KINGSTON ];
-then
-  if [ -d ~/Dev/sh/universal-setup ];
-  then
-    cp -ru ~/Dev/sh/universal-setup /run/media/thederpykrafter/KINGSTON/ && \
-      dunstify -t 10000 -u normal "Universal Setup backup Complete" && \
-      echo -e "\e[94mUniversal Setup backup complete!\e[m"
-    fi
-fi
+set -e
+
+USB=/run/media/thederpykrafter/KINGSTON/
+SETUP=/home/thederpykrafter/Dev/sh/universal-setup/
+
+test -d "$USB"
+test -d "$SETUP"
+rsync -rah --progress $SETUP $USB/universal-setup && \
+  dunstify -t 10000 -u normal "Universal Setup backup Complete" && \
+  echo -e "\e[94mUniversal Setup backup complete!\e[m"
