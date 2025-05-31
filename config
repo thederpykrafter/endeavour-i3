@@ -340,14 +340,19 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# assign displays to variables
+set $lmon "eDP-1"
+set $rmon "HDMI-1-0"
+
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-workspace $ws1 output secondary
-workspace $ws2 output primary
-workspace $ws3 output primary
-workspace $ws4 output secondary
-workspace $ws5 output primary
+
+workspace $ws1 output $rmon
+workspace $ws2 output $lmon
+workspace $ws3 output $lmon
+workspace $ws4 output $rmon
+workspace $ws5 output $lmon
 
 # bind program to workspace and focus to them on startup:
 assign [class="kitty"] $ws1
