@@ -8,4 +8,11 @@
 # script to show current power profile
 
 current_profile=$(/usr/bin/powerprofilesctl get)
-echo "$current_profile"
+
+case $current_profile in
+  balanced) echo "󰾅 " ;;
+  performance) echo "󰓅 " ;;
+  power-saver) echo "󰾆 " ;;
+esac
+
+# echo "$current_profile"
