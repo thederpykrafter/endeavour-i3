@@ -336,6 +336,8 @@ workspace $ws5 output $lmon
 
 # bind program to workspace and focus to them on startup:
 assign [class="kitty"] $ws1
+assign [class="PrismLauncher"] $ws1
+assign [class="Minecraft*"] $ws1
 assign [class="steam"] $ws2
 assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
@@ -344,13 +346,15 @@ assign [class="(?i)obs"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=kitty] focus
+for_window [class=PrismLauncher] focus
+for_window [class=Minecraft*] focus
 for_window [class=steam] focus
 for_window [class=firefox] focus
 for_window [class=Thunar] focus
 for_window [class=obsidian] focus
 for_window [class=(?i)obs] focus
 
-# disable floating fore love2d
+# disable floating for love2d
 #for_window [class=love] floating disable
 
 ##############
