@@ -5,18 +5,16 @@
 
 temp=`nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader`
 
-echo $temp"°C"
-if (( $temperature < 50 )); then
+if (( $temp < 40 )); then
   label=''
-elif (( $temperature < 60 )); then
+elif (( $temp < 50 )); then
   label=''
-elif (( $temperature < 70 )); then
+elif (( $temp < 60 )); then
   label=''
-elif (( $temperature < 80 )); then
+elif (( $temp < 70 )); then
   label=''
 else
   label=''
 fi
 
-
-echo $label $temperature".0°C"
+echo $label $temp".0°C"
