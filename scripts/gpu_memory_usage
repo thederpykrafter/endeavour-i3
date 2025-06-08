@@ -2,6 +2,6 @@
 
 # use nvidia-smi to query gpu usage
 
-usage=`nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader`
+usage=`nvidia-smi --query-gpu=utilization.memory --format=csv,noheader`
 
 echo $usage | sed 's/ //'
