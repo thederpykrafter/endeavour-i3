@@ -391,7 +391,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id numlockx on
 
 # firewall applet in tray
-exec --no-startup-id firewall-applet
+# exec --no-startup-id firewall-applet
 
 # start conky:
 #exec_always --no-startup-id conky
