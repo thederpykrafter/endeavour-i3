@@ -509,11 +509,11 @@ client.urgent                   $urgentred      $urgentred      $white          
 ############################################
 
 bar {
-  font pango: Noto Sans Regular 12
+  font pango: Noto Sans Regular 13
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   position bottom
   tray_output primary
-  tray_padding 1px
+  tray_padding 2px
 
   bindsym button4 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
   bindsym button5 exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
