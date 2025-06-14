@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+wallpapers=`fd .png ~/.config/i3/EndeavourOS-HD-Wallpaper\`
+rnd_img=`shuf -n1 -e $wallpapers`
+
+sleep 1
+feh --bg-scale $rnd_img $rnd_img
+
+
+feh --bg-fill `shuf -n1 -e \`fd .png ~/.config/i3/EndeavourOS-HD-Wallpaper\``  `shuf -n1 -e \`fd .png ~/.config/i3/EndeavourOS-HD-Wallpaper\``
+
