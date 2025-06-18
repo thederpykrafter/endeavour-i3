@@ -505,17 +505,18 @@ set_from_resource $color15 i3wm.color15
 
 
 # define colors for windows:
-#                       border   bground  text      indicator child_border
-client.focused          $color9  $color8  $color14  $color10  $color10
-client.unfocused        $color8  $color8  $color15  $color1   $color0
-client.focused_inactive $color8  $color8  $color15  $color0   $color15
-client.urgent           $color2  $color2  $color14  $color6   $yellow
+#                       border    bground  text      indicator child_border
+client.focused          $color11  $color8  $color14  $color10  $color10
+client.unfocused        $color8   $color8  $color15  $color1   $color0
+client.focused_inactive $color8   $color8  $color15  $color0   $color15
+client.urgent           $color2   $color2  $color14  $color6   $color6
 
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
 
 bar {
+  workspace_command ~/.config/i3/scripts/hide-workspaces
   font pango: Noto Sans Regular 13
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   position bottom
@@ -533,13 +534,16 @@ bar {
   bindsym button2 exec --no-startup-id pactl set-default-sink bluez_output.FC_58_A1_94_CC_E0.1 && notify-send "Audio output - E7" && pkill -RTMIN+1 i3blocks
 
   colors {
-    background          $color1
-    statusline          $color14
+    background          $color11
+    focused_background  $color11
+    statusline          $color15
+    focused_statusline  $color15
+
     #                   border    bg        txt       indicator
-    focused_workspace   $color15  $color13  $color0   $color10
-    active_workspace    $color15  $color7   $color1   $color10
-    inactive_workspace  $color15  $color1   $color1   $color10
-    urgent_workspace    $color2   $color2   $color14  $color10
+    focused_workspace   $color15  $color10   $color0   $color5
+    active_workspace    $color15  $color7   $color0   $color5
+    inactive_workspace  $color15  $color8   $color0   $color5
+    urgent_workspace    $color2   $color2   $color14  $color5
   }
 }
 
