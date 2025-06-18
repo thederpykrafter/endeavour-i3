@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 wallpapers=~/.config/i3/EndeavourOS-HD-Wallpaper
-rnd_img=`shuf -n1 -e \`fd .png $wallpapers\``
 
-sleep 1
-feh --bg-fill $rnd_img $rnd_img
+wal -i $wallpapers -n -a "0.7" --vte
+
+# sleep 1
+for monitor in {1..$((`xrandr --listactivemonitors | wc -l` - 1 ))} ; do
+  feh --bg-fill `cat ~/.cache/wal/wal`
+done
