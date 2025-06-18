@@ -84,7 +84,7 @@ else:
     def color(percent):
         if percent < 10:
             # exit code 33 will turn background red
-            return config.get("color_10", "#a9b1d6")
+            return config.get("color_10", "#FF1100")
         if percent < 20:
             return config.get("color_20", "#FF3300")
         if percent < 30:
