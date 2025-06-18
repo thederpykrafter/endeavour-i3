@@ -3,8 +3,8 @@
 wallpapers=~/.config/i3/EndeavourOS-HD-Wallpaper
 
 wal -i $wallpapers -n -a "0.7" --vte
+pywalfox update
 
-# sleep 1
 for monitor in {1..$((`xrandr --listactivemonitors | wc -l` - 1 ))} ; do
   feh --bg-fill `cat ~/.cache/wal/wal`
 done
