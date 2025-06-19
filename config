@@ -515,7 +515,6 @@ client.urgent           $color2   $color2  $color14  $color6   $color6
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
-exec_always --no-startup-id polybar-msg cmd quit && polybar example 2>&1 | tee -a /tmp/polybar.log
 
 bar {
   workspace_command ~/.config/i3/scripts/hide-workspaces
