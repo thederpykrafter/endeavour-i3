@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-wallpapers=~/.config/i3/EndeavourOS-HD-Wallpaper
+if [[ -f ~/.config/i3/EndeavourOS-HD-Wallpaper/EndeavourOS\ _Blue_SpaceStation__38402160.png ]]; then
+  wallpapers=~/.config/i3/EndeavourOS-HD-Wallpaper
+else
+  wallpapers=~/.config/i3/image-not-found-.png
+fi
 
 sleep 0.1
 wal -i $wallpapers -a "0.7" --vte
