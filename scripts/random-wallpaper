@@ -10,4 +10,5 @@ sleep 0.1
 wal -i $wallpapers -a "0.7" --vte
 pywalfox update
 wal-polybar -t ~/.config/polybar/config.template
+polybar-msg cmd quit && polybar example 2>&1 | tee -a /tmp/polybar.log
 [[ `tmux info` ]] && tmux source-file ~/.config/tmux/tmux.conf
