@@ -36,9 +36,9 @@ new_window pixel 2
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 3
-gaps outer 1
-smart_gaps on
+gaps inner 4
+gaps outer 2
+# smart_gaps on
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
