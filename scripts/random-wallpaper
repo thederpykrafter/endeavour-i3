@@ -8,7 +8,7 @@ fi
 
 sleep 0.1
 
-wal -i $wallpapers -a "0.8" --vte
+wal -i $wallpapers -a "0.8" --vte --backend schemer
 
 [[ `tmux info` ]] && tmux source-file ~/.config/tmux/tmux.conf
 pywalfox update
