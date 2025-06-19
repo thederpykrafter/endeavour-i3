@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-if [[ -f ~/.config/i3/EndeavourOS-HD-Wallpaper/EndeavourOS\ _Blue_SpaceStation__38402160.png ]]; then
+if [[ `fd . ~/.config/i3/EndeavourOS-HD-Wallpaper/` ]]; then
   wallpapers=~/.config/i3/EndeavourOS-HD-Wallpaper
 else
   wallpapers=~/.config/i3/image-not-found-.png
 fi
 
 sleep 0.1
-wal -i $wallpapers -a "0.7" --vte
-pywalfox update
-wal-polybar -t ~/.config/polybar/config.template
-polybar-msg cmd quit && polybar example 2>&1 | tee -a /tmp/polybar.log
+
+wal -i $wallpapers -a "0.8" --vte
+
 [[ `tmux info` ]] && tmux source-file ~/.config/tmux/tmux.conf
+pywalfox update
+
+~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
+polybar-msg cmd quit
+polybar laptop 2>&1 | tee -a /tmp/polybar.log & disown
+polybar tv 2>&1 | tee -a /tmp/polybar.log & disown
