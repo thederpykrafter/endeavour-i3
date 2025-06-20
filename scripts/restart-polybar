@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+
 i3-msg reload
-polybar-msg cmd quit
-polybar laptop 2>&1 | tee -a /tmp/polybar.log & disown
-polybar tv 2>&1 | tee -a /tmp/polybar.log & disown
+
+
+if [[ ! `pgrep polybar | wc -l` == 2 ]]; then
+  polybar-msg cmd quit
+  polybar laptop 2>&1 | tee -a /tmp/polybar.log & disown
+  polybar tv 2>&1 | tee -a /tmp/polybar.log & disown
+else
+  polybar-msg cmd restart
+fi
