@@ -6,14 +6,8 @@ else
   wallpapers=~/.config/i3/image-not-found-.png
 fi
 
-sleep 0.1
-
 wal -i $wallpapers -a "0.8" --vte --backend schemer
 
+~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
 [[ `tmux info` ]] && tmux source-file ~/.config/tmux/tmux.conf
 pywalfox update
-
-~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
-polybar-msg cmd quit
-polybar laptop 2>&1 | tee -a /tmp/polybar.log & disown
-polybar tv 2>&1 | tee -a /tmp/polybar.log & disown
