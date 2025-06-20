@@ -2,11 +2,12 @@
 
 set -e
 
-USB=/run/media/thederpykrafter/KINGSTON/
-SETUP=/home/thederpykrafter/Dev/sh/universal-setup/
-
-test -d "$USB"
-test -d "$SETUP"
-rsync -rah --progress $SETUP $USB/universal-setup && \
-  dunstify -t 10000 -u normal "Universal Setup backup Complete" && \
-  echo -e "\e[94mUniversal Setup backup complete!\e[m"
+cd ~/Dev/bash/
+KINGSTON='/run/media/thederpykrafter/KINGSTON'
+if [ -d $KINGSTON ]; then
+  zip -FSr $KINGSTON/universal-setup.zip universal-setup | \
+    while read OUTPUT; do
+    dunstify -i backup -t 10000 -r 666666 -u normal "Universal-Setup Backup" "$OUTPUT"
+  done
+  printf "\e[%dm%s\e[m\n" 94 'Universal-Setup Backup Complete!'
+fi
