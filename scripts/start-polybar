@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
-for monitor in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-  MONITOR=$monitor polybar --reload example &
-done
+# just in case
+polybar-msg cmd quit
+killall polybar
+
+# laptop bar
+polybar laptop 2>&1 | tee -a /tmp/polybar.log &
+disown
+
+# tv bar
+[[ $(xrandr | grep "HDMI") ]] && polybar tv 2>&1 | tee -a /tmp/polybar.log &
+disown
