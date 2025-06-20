@@ -173,7 +173,7 @@ bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/xscreensaver
 # lock by blurring the screen:
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/scripts/blur-lock
 
-# reload the configuration file
+# reload the configuration file and polybar
 bindsym $mod+Shift+c exec --no-startup-id ~/.config/i3/scripts/restart-polybar
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
@@ -402,12 +402,9 @@ exec --no-startup-id numlockx on
 
 # start a script to setup displays
 # exec_always --no-startup-id ~/.config/i3/scripts/monitors.sh && i3-msg workspace $ws1
-exec_always --no-startup-id autorandr --change --match-edid
-exec_always --no-startup-id i3-msg workspace $ws1
+
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-
-exec_always --no-startup-id ~/.config/i3/scripts/random-wallpaper
 
 # set powersavings for display:
 # time in seconds
@@ -486,7 +483,7 @@ for_window [class=".*"] resize set 640 480 #to change size of all floating windo
 for_window [class=".*"] move position center
 
 ######################################
-# pywal settings for bar and windows #
+# pywal settings for windows #
 ######################################
 
 set_from_resource $color66 i3wm.color66
@@ -574,4 +571,6 @@ bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show
 ## backup universal-setup and play sound ##
 ###########################################
 exec_always --no-startup-id ~/.config/i3/scripts/backup_setup
-exec_always --no-startup-id sleep 0.1 && mpv ~/.config/i3/load-sound.mp3
+exec_always --no-startup-id autorandr --change --match-edid
+exec_always --no-startup-id ~/.config/i3/scripts/random-wallpaper
+exec_always --no-startup-id sleep 0.2 && mpv ~/.config/i3/load-sound.mp3
