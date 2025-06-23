@@ -511,9 +511,9 @@ set_from_resource $color15 i3wm.color15
 
 # define colors for windows:
 #                       border    bground  text      indicator child_border
-client.focused          $color11  $color8  $color14  $color10  $color10
-client.unfocused        $color8   $color8  $color15  $color1   $color0
-client.focused_inactive $color8   $color8  $color15  $color0   $color11
+client.focused          $color11  $color8  $color14  $color1  $color2
+client.unfocused        $color8   $color8  $color15  $color0   $color0
+client.focused_inactive $color8   $color8  $color15  $color0   $color0
 client.urgent           $color2   $color2  $color14  $color6   $color6
 
 ############################################
