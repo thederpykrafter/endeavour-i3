@@ -164,23 +164,23 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q exec --no-startup-id xkill
 
 # exit-menu
-bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu.sh
 
 # Lock the system
 # lock with a picture:
-bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/xscreensaver
+bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/xscreensaver.sh
 # bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/lock-screen
 # lock by blurring the screen:
-bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/scripts/blur-lock
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/scripts/blur-lock.sh
 
 # reload the configuration file
-bindsym $mod+Shift+c exec --no-startup-id i3-msg reload && ~/.config/i3/scripts/start-polybar
+bindsym $mod+Shift+c exec --no-startup-id i3-msg reload && ~/.config/i3/scripts/start-polybar.sh
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym $mod+F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
+bindsym $mod+F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2.sh
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
@@ -237,7 +237,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+a focus parent
 
 # open new empty workspace
-bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace
+bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace.sh
 
 # Multimedia Keys
 # volume
@@ -302,7 +302,7 @@ bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-
 bindsym Shift+Print exec --no-startup-id scrot -u ~/%Y-%m-%d-%T-screenshot.png && notify-send "Appshot saved to ~/$(date +"%Y-%m-%d-%T")-appshot.png"
 
 # Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles.sh
 
 ##########################################
 # configuration for workspace behaviour: #
