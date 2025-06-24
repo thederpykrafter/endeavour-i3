@@ -30,7 +30,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 # thin borders
 # hide_edge_borders both
@@ -368,7 +368,7 @@ for_window [class=(?i)obs] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-exec_always --no-startup-id picom -b -f
+exec_always --no-startup-id if pgrep picom &> /dev/null; then killall picom; fi && picom -b -f --corner-radius 4
 
 #############################################
 # autostart applications/services on login: #
