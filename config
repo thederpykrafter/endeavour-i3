@@ -168,7 +168,7 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu.sh
 
 # Lock the system
 # lock with a picture:
-bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/xscreensaver.sh
+bindsym $mod+x exec --no-startup-id xscreensaver-command -lock
 # bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/lock-screen
 # lock by blurring the screen:
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/scripts/blur-lock.sh
