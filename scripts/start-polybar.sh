@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 
-MONITORS=$(xrandr --query | grep " connected" | cut -d" " -f1)
-MONITOR_COUNT=$(echo $MONITORS | wc -l)
-BARS=$(pgrep polybar | wc -l)
-if [[ $BARS == $MONITOR_COUNT ]]; then exit 0; fi
+MONITORS=$(xrandr | grep " connected" | wc -l)
+[[ $(pgrep polybar | wc -l) == $MONITORS ]] && exit 0
 
 # just in case
-killall -q polybar
+[[ $(pgrep polybar) ]] && killall -q polybar
 
 # make sure polybar is killed first
 while [[ $(pgrep -x polybar) ]]; do sleep 1; done
 
 # laptop bar
-polybar laptop 2>&1 | tee -a /tmp/polybar.log &
+polybar laptop 2>&1 | tee -a /tmp/polybar.laptop.log &
 disown
 
 # tv bar
-[[ $(xrandr | grep "HDMI") ]] && polybar tv 2>&1 | tee -a /tmp/polybar.log &
+[[ $(xrandr | grep "HDMI-1-0") ]] && polybar tv 2>&1 | tee -a /tmp/polybar.tv.log &
 disown
