@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-xscreensaver-command -activate
+xscreensaver-command -lock
