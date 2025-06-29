@@ -12,5 +12,9 @@ wal -i $wallpapers -a "0.8"
 
 # reload pywal themes
 ~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
-[[ $(tmux info) ]] && tmux source-file ~/.config/tmux/tmux.conf
+
+# reload firefox
 pywalfox update
+
+# reload tmux
+[[ $(tmux info) ]] && tmux source-file ~/.config/tmux/tmux.conf
