@@ -8,7 +8,7 @@ else
 fi
 
 # apply wallpaper and generate theme
-wal -i $wallpapers -a "0.8"
+wal --recursive -i $wallpapers -a "0.8"
 
 # reload pywal themes
 ~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
