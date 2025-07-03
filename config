@@ -408,7 +408,7 @@ exec_always --no-startup-id autorandr --change --match-edid
 exec_always --no-startup-id ~/.config/i3/scripts/random-wallpaper.sh
 
 # start polybar
-exec --no-startup-id sleep 1 && ~/.config/i3/scripts/start-polybar.sh
+exec --no-startup-id sleep 2 && ~/.config/i3/scripts/start-polybar.sh
 
 # set powersavings for display:
 # time in seconds
