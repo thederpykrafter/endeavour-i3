@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 
 MONITORS=$(xrandr | grep " connected" | wc -l)
-[[ $(pgrep polybar | wc -l) == $MONITORS ]] && exit 0
+if [[ $(pgrep polybar | wc -l) == $MONITORS ]]; then
+  ~/.config/polybar/wal-polybar.py -t ~/.config/polybar/config.template
+  polybar-msg cmd restart && exit 0
+fi
+
+# reload firefox
+[[ $(pgrep firefox) ]] && pywalfox update
+
+# reload tmux
+[[ $(tmux info) ]] && tmux source-file ~/.config/tmux/tmux.conf
 
 # just in case
 [[ $(pgrep polybar) ]] && killall -q polybar
