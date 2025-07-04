@@ -368,7 +368,8 @@ for_window [class=(?i)obs] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-exec_always --no-startup-id if pgrep picom &> /dev/null; then killall picom; fi && picom -b -f --corner-radius 4
+exec_always --no-startup-id [[ $(pgrep picom) ]] && killall picom
+exec_always --no-startup-id sleep 0.1 && picom -b -f --corner-radius 4
 
 #############################################
 # autostart applications/services on login: #
