@@ -8,7 +8,7 @@ else
 fi
 
 # apply wallpaper and generate theme
-wal --recursive -i $wallpapers -a "0.8"
+wal --recursive -i $wallpapers
 
 # reload oomox theme
 # exec_always --no-startup-id sleep 2 && themix-multi-export ~/.config/oomox/export_config/multi_export_deault.json
